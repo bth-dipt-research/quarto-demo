@@ -1,0 +1,44 @@
+---
+title: "Demo Interactive"
+author:
+  - name: Franz Zieris
+    email: franz.zieris@bth.se
+date: 2026-04-02
+format: html
+server: shiny
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: load-libraries
+#| message: false
+library(targets)
+```
+
+```{r}
+#| context: data
+
+# "context: data" makes this available for the UI context and for the server context
+
+data = tar_read(data)
+```
+
+## Work Hours
+
+```{r}
+selectInput("language", "Programming Language:", unique(data$lang), selected = "Java")
+plotOutput("whoursPlot")
+```
+
+```{r}
+#| label: fig-java-whours
+#| fig-cap: Work time spent on Java programs
+#| warning: false
+#| context: server
+source("R/plot.R")
+output$whoursPlot <- renderPlot({
+     data |>
+        plot_work_hours(input$language)
+})
+```

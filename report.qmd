@@ -1,0 +1,34 @@
+---
+title: "Demo Report"
+author:
+  - name: Franz Zieris
+    email: franz.zieris@bth.se
+date: 2026-04-02
+format:
+  html: default
+  pdf:
+    number-sections: true
+    documentclass: scrartcl
+    sansfont: "Arial"
+    mainfont: "Times New Roman"
+    colorlinks: true
+execute: 
+  echo: false
+---
+
+```{r}
+#| label: load-libraries
+#| message: false
+library(targets)
+source("R/plot.R")
+```
+
+## Work Hours
+
+```{r}
+#| label: fig-java-whours
+#| fig-cap: Work time spent on Java programs
+#| warning: false
+tar_read(data) |>
+    plot_work_hours("Java")
+```

@@ -1,0 +1,22 @@
+---
+title: "Demo Slides"
+author: "Franz Zieris"
+format: revealjs
+---
+
+```{r}
+#| label: load-libraries
+#| message: false
+library(targets)
+source("R/plot.R")
+```
+
+## Work Hours
+
+```{r}
+#| label: fig-java-whours
+#| fig-cap: Work time spent on Java programs
+#| warning: false
+tar_read(data) |>
+    plot_work_hours("Java")
+```
