@@ -23,3 +23,8 @@ Starts a Shiny webserver and an interactive web interface at http://localhost:80
 * Needs: [R](https://cran.r-project.org/)
 * Needs: [Quarto](https://quarto.org/)
 * Needs: TinyTex (`quarto install tinytex`)
+
+## Implementation Details
+
+This demo project make use of R's "[targets](https://books.ropensci.org/targets/)" library, which is _not required_ to use Quarto,
+but with large data sets, complex and computationally expensive data cleaning and processing pipelines, manual maintenance becomes a nightmare.
