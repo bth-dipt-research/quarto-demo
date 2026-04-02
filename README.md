@@ -20,6 +20,6 @@ Starts a Shiny webserver and an interactive web interface at http://localhost:80
 
 ## Requirements
 
-* Needs: R
-* Needs: Quarto
+* Needs: [R](https://cran.r-project.org/)
+* Needs: [Quarto](https://quarto.org/)
 * Needs: TinyTex (`quarto install tinytex`)
